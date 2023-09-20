@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./include/head'); %>
+</head>
+
+<body class="relative w-full">
+    <div class="absolute right-10 top-2 h-4">
+        <h1 class="font-semibold text-xl tracking-wide">Welcome <span class="font-bold text-2xl">
+                <%= user.username %>
+            </span>
+        </h1>
+    </div>
+    <div class="flex flex-col justify-center items-center absolute w-full">
+        <div class="font-semibold text-2xl my-20 p-4">
+            <h2 class="font-bold text-2xl text-center mb-5">Your Profile...</h2>
+            <p class="mb-3">Full-name:
+                <span class="tracking-wide font-bold capitalize">
+                    <%= user.firstname %>
+                        <%= user.lastname %>
+                </span>
+            </p>
+            <p class="mb-3">Email:
+                <span class="tracking-wide font-bold">
+                    <%= user.email %>
+                </span>
+            </p>
+            <p class="mb-3">Phone number:
+                <span class="tracking-wide font-bold">
+                    <%= user.phone %>
+                </span>
+            </p>
+        </div>
+        <button
+            class="sm:relative absolute bottom-0 left-5 text-xl bg-black outline-none text-semibold text-white py-1 px-5 rounded-md">
+            <a href="/logout">Logout</a>
+        </button>
+    </div>
+</body>
+
+</html>

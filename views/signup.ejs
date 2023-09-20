@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./include/head'); %>
+</head>
+
+<body class="flex justify-center items-center w-full h-full">
+    <div class="relative bg-gray-700 sm:w-1/2 w-full p-5 pt-7 rounded-lg shadow-lg">
+        <a href="javascript:void(0);" onclick="goBack();"
+            class="absolute top-4 left-3 cursor-pointer flex items-center text-white">
+            <svg width="23" height="23" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.51 3.87 15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13Z"></path>
+            </svg>
+            <span class="font-semibold">Back</span>
+        </a>
+        <h1 class="text-center text-3xl font-bold mb-3 tracking-wider">Sign Up</h1>
+
+        <% if (typeof alert !='undefined' ) { %>
+            <% alert.forEach(function(error) { %>
+                <div class="mb-3 inline-flex w-full items-center rounded-lg bg-red-300 px-6 py-5 text-base text-danger-700"
+                    role="alert">
+                    <span class="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                    <%= error.msg %>
+                </div>
+                <% }) %>
+                    <% } %>
+
+                        <form class="w-full" action="/signup" method="post">
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">First-Name: </label>
+                                <input type="text"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    name="firstName" placeholder="Enter First Name" required>
+                            </div>
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">Last-Name: </label>
+                                <input type="text"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    name="lastName" placeholder="Enter Last Name" required>
+                            </div>
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">Username: </label>
+                                <input type="text" id="Username"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    name="username" placeholder="Enter UserName" required>
+                            </div>
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">Email: </label>
+                                <input type="text"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    name="email" id="email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">Phone Number: </label>
+                                <input type="text"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    name="phone" placeholder="Enter Phone-number" required>
+                            </div>
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">Password: </label>
+                                <input type="password"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    name="password" id="password" placeholder="Enter Password" required>
+                            </div>
+                            <div class="flex flex-col my-3">
+                                <label class="font-semibold text-lg">Confirm-Password: </label>
+                                <input type="password" name="confirmPassword"
+                                    class="bg-transparent border-b-2 border-black outline-none px-3 font-normal tracking-wide text-base"
+                                    id="confirm-password" placeholder="Re-enter Password" required>
+                            </div>
+                            <div class="sm:flex justify-between items-center mt-4">
+                                <input type="submit" value="Submit"
+                                    class="uppercase px-9 py-1 rounded-lg ml-4 sm:mb-0 mb-2 bg-black text-white tracking-wide font-semibold cursor-pointer">
+                                <p class="font-medium sm:ml-0 ml-4">Already have an account? <a href="/login"
+                                        class="text-blue-300 underline font-semibold cursor-pointer">Login</a></p>
+                            </div>
+                        </form>
+    </div>
+</body>
+
+</html>

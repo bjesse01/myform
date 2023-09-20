@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./include/head'); %>
+</head>
+
+<body class="flex justify-center items-center w-full h-screen">
+    <div class="sm:flex sm:w-1/2 w-full flex-col bg-gray-400 p-11 rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-bold tracking-normal ml-2 mb-3">Welcome to jTech authentication page...
+        </h1>
+        <h2 class="font-medium text-lg tracking-tight">This is a demo authentication page so all data will be
+            deleted
+            after testing
+            is done by selected users so
+            users don.t have to worry about their information leaking out of our database.</h2>
+        <h3 class="text-center font-semibold sm:text-lg text-base underline mt-3">Security is our top priority</h3>
+
+        <div class="flex items-center w-full justify-evenly my-7">
+            <button class="bg-black text-white font-semibold tracking-wide text-lg capitalize px-8 py-1 rounded-lg"><a
+                    href="/signup">Sign
+                    up</a></button>
+            <button
+                class="text-black border-2 font-semibold tracking-wide border-black text-lg capitalize px-8 py-1 rounded-lg"><a
+                    href="/login">Login</a></button>
+        </div>
+    </div>
+</body>
+
+</html>
